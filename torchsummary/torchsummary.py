@@ -98,6 +98,9 @@ def summary_string(model, input_size, batch_size=-1, device=torch.device('cuda:0
         summary_str += line_new + "\n"
 
     # assume 4 bytes/number (float on cuda).
+    print(input_size)
+    print(total_output)
+    print(batch_size)
     total_input_size = abs(np.prod(sum(input_size, ()))
                            * batch_size * 4. / (1024 ** 2.))
     total_output_size = abs(2. * total_output * 4. /
